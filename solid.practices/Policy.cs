@@ -5,7 +5,8 @@ namespace solid.practices
 
     public class Policy
     {
-        public PolicyType Type { get; set; }
+        public string Type { get; set; }
+
         #region Life Insurance
         public string FullName { get; set; }
         public DateTime DateOfBirth { get; set; }
@@ -18,6 +19,10 @@ namespace solid.practices
         public decimal Size { get; set; }
         public decimal Valuation { get; set; }
         public decimal BondAmount { get; set; }
+        #endregion
+
+        #region Flood In Addition To Land
+        public int ElevationAboveSeaLevelFeet { get; set; }
         #endregion
 
         #region Auto

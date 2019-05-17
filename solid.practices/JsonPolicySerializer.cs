@@ -5,9 +5,9 @@ namespace solid.practices
 {
     public class JsonPolicySerializer
     {
-        public Policy GetPolicyFromJsonString(string policyJson)
+        public Policy GetPolicyFromJsonString(string jsonString)
         {
-            return JsonConvert.DeserializeObject<Policy>(policyJson, new StringEnumConverter());
+            return JsonConvert.DeserializeObject<Policy>(jsonString, new StringEnumConverter());
         }
     }
 }
