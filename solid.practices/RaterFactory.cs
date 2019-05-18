@@ -26,7 +26,7 @@ namespace solid.practices
             }
             catch (Exception)
             {
-                return null;
+                return new UnknownPolicyRater(engine, engine.Logger);
             }
         }
     }
