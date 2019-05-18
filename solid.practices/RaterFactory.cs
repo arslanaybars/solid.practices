@@ -4,7 +4,7 @@ namespace solid.practices
 {
     public class RaterFactory
     {
-        public Rater Create(Policy policy, RatingEngine engine)
+        public Rater Create(Policy policy, IRatingContext context)
         {
             try
             {
@@ -22,11 +22,11 @@ namespace solid.practices
                 //        return null;
                 //}
 
-                return (Rater)Activator.CreateInstance(Type.GetType($"solid.practices.{policy.Type}PolicyRater"), new object[] { engine, engine.Logger });
+                return (Rater)Activator.CreateInstance(Type.GetType($"solid.practices.{policy.Type}PolicyRater"), new object[] { new RatingUpdater(context.Engine) });
             }
             catch (Exception)
             {
-                return null;
+                return new UnknownPolicyRater(new RatingUpdater(context.Engine));
             }
         }
     }

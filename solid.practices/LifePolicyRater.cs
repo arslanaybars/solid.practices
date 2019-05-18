@@ -4,27 +4,27 @@ namespace solid.practices
 {
     public class LifePolicyRater : Rater
     {
-        public LifePolicyRater(RatingEngine engine, ConsoleLogger logger) : base(engine, logger)
+        public LifePolicyRater(IRatingUpdater ratingUpdater) : base(ratingUpdater)
         {
         }
 
         public override void Rate(Policy policy)
         {
-            _logger.Log("Rating LIFE policy...");
-            _logger.Log("Validating policy.");
+            Logger.Log("Rating LIFE policy...");
+            Logger.Log("Validating policy.");
             if (policy.DateOfBirth == DateTime.MinValue)
             {
-                _logger.Log("Life policy must include Date of Birth.");
+                Logger.Log("Life policy must include Date of Birth.");
                 return;
             }
             if (policy.DateOfBirth < DateTime.Today.AddYears(-100))
             {
-                _logger.Log("Centenarians are not eligible for coverage.");
+                Logger.Log("Centenarians are not eligible for coverage.");
                 return;
             }
             if (policy.Amount == 0)
             {
-                _logger.Log("Life policy must include an Amount.");
+                Logger.Log("Life policy must include an Amount.");
                 return;
             }
             int age = DateTime.Today.Year - policy.DateOfBirth.Year;
@@ -37,9 +37,9 @@ namespace solid.practices
             decimal baseRate = policy.Amount * age / 200;
             if (policy.IsSmoker)
             {
-                _engine.Rating = baseRate * 2;
+                _ratingUpdater.UpdateRating(baseRate * 2);
             }
-            _engine.Rating = baseRate;
+            _ratingUpdater.UpdateRating(baseRate);
 
         }
     }
