@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "solid.practices.tests", "solid.practices.tests\solid.practices.tests.csproj", "{E58514E5-A6EF-4E85-843A-84AE022EF779}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "solid.practices.tests", "solid.practices.tests\solid.practices.tests.csproj", "{E58514E5-A6EF-4E85-843A-84AE022EF779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "solid.practices", "solid.practices\solid.practices.csproj", "{2E28B47E-F957-4964-B065-DA08BE1C3FFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "solid.practices", "solid.practices\solid.practices.csproj", "{2E28B47E-F957-4964-B065-DA08BE1C3FFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "solid.web", "solid.web\solid.web.csproj", "{BF9D3DF0-DD8D-4F25-A7D3-6EFCFAAD51EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2E28B47E-F957-4964-B065-DA08BE1C3FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E28B47E-F957-4964-B065-DA08BE1C3FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E28B47E-F957-4964-B065-DA08BE1C3FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9D3DF0-DD8D-4F25-A7D3-6EFCFAAD51EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9D3DF0-DD8D-4F25-A7D3-6EFCFAAD51EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9D3DF0-DD8D-4F25-A7D3-6EFCFAAD51EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9D3DF0-DD8D-4F25-A7D3-6EFCFAAD51EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
