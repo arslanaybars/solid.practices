@@ -1,4 +1,5 @@
-﻿using System;
+﻿using solid.practices.Infrastructure.Loggers;
+using System;
 
 namespace solid.practices
 {
@@ -8,7 +9,12 @@ namespace solid.practices
         {
             Console.WriteLine("Insurance Rating System Starting...");
 
-            var engine = new RatingEngine();
+            var logger = new FileLogger();
+
+            var engine = new RatingEngine(logger,
+                                        new FilePolicySource(),
+                                        new JsonPolicySerializer(),
+                                        new RaterFactory(logger));
             engine.Rate();
 
             if (engine.Rating > 0)

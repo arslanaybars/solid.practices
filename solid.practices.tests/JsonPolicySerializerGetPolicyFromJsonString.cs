@@ -12,9 +12,9 @@ namespace solid.practices.tests
         public void ReturnsDefaultPolicyFromEmptyJsonString()
         {
             var inputJson = "{}";
-            var serialier = new JsonPolicySerializer();
+            var serializer = new JsonPolicySerializer();
 
-            var result = serialier.GetPolicyFromJsonString(inputJson);
+            var result = serializer.GetPolicyFromString(inputJson);
 
             var policy = new Policy();
             AssertPoliciesEqual(result, policy);
@@ -24,14 +24,19 @@ namespace solid.practices.tests
         public void ReturnsSimpleAutoPolicyFromValidJsonString()
         {
             var inputJson = @"{
-                                ""type"": ""Auto"",
-                                ""make"": ""BMW""
-                              }";
+  ""type"": ""Auto"",
+  ""make"": ""BMW""
+}
+";
             var serializer = new JsonPolicySerializer();
 
-            var result = serializer.GetPolicyFromJsonString(inputJson);
+            var result = serializer.GetPolicyFromString(inputJson);
 
-            var policy = new Policy { Type = "Auto", Make = "BMW" };
+            var policy = new Policy
+            {
+                Type = "Auto",
+                Make = "BMW"
+            };
             AssertPoliciesEqual(result, policy);
         }
 
