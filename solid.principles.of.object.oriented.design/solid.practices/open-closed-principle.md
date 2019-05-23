@@ -104,3 +104,8 @@ we’ve closed it for modification by opening it up for extension.
 	- Don't apply OCP if you could not imagine at first
 	- If the module changes once, accept it!
 	- If it changes a second time, refactor to achieve OCP
+
+
+Related Fundamentals
+- Strategy Pattern
+- Template Method Pattern
