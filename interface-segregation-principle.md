@@ -1,6 +1,6 @@
 # Interface Segregation Principle
 
-States that Clients should no be forced to depend on methods they do not use
+States that Clients shouldn't be forced to depend on methods they do not use
 
 no client code object should be forced to depend on methods it does not use.  Basically, each code object should only implement what it needs, and not be required to implement anything else
 
